@@ -1,10 +1,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 use std::fs::File;
 use std::io::prelude::*;
 
 fn main() {
+
     // Open file     
     let mut file = File::open("test.txt").expect("Can't open file!");
 
@@ -14,4 +26,13 @@ fn main() {
 
     // Print file contents 
     println!("File contents: {}", contents);
-}
+
+
+
+    // Get set of unique chars from contents
+    let mut chars:Vec<char> = contents.chars().collect();
+    chars.sort();
+    chars.dedup();
+
+    let len = chars.len();
+}   

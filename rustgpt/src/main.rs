@@ -26,12 +26,13 @@ fn main() {
         stoi.insert(ch, i);
         itos.insert(i, ch);
     }
-
-
 }
-
 
 fn encoding(s: &str, h: &HashMap<char, usize>) -> Vec<usize> {
     s.chars().map(|c| *h.get(&c).unwrap()).collect()
 
+}
+
+fn decoding(v: Vec<usize>, itos: &HashMap<usize, char>) -> String {
+   v.iter().map(|i| itos.get(i).unwrap()).collect() 
 }

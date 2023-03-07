@@ -27,8 +27,11 @@ fn main() {
         itos.insert(i, ch);
     }
 
+
 }
 
 
+fn encoding(s: &str, h: &HashMap<char, usize>) -> Vec<usize> {
+    s.chars().map(|c| *h.get(&c).unwrap()).collect()
 
-
+}

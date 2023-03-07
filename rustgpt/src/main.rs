@@ -17,17 +17,18 @@ fn main() {
     vocab.sort();
     vocab.dedup();
 
-
     // Tokenize: convert characters into a sequence of integers.
     // Define encoding table: 
     let mut stoi = HashMap::new();
     let mut itos = HashMap::new();
 
-    for (i, ch) in vocab.iter().enumerate() {
-        stoi.insert(*ch, i);
-        itos.insert(i, *ch);
+    for (i, ch) in vocab.into_iter().enumerate() {
+        stoi.insert(ch, i);
+        itos.insert(i, ch);
     }
-} 
+
+}
+
 
 
 
